@@ -4,8 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Hi! My name is Federico Menozzi, and I study Computer Science at the University of North Carolina at Chapel Hill. During the day, I weave technological wonders in the dark of my room for no one to see. At night, I go back and fix all the bugs I made during the day. In my spare time, I like to learn about how computers work from the transistors up and make fun of web devs for doing what I never could.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+If you'd like to learn mildly interesting things about computation, this is the blog for you.
