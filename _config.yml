@@ -1,8 +1,7 @@
 # Site settings
-title: This is where my witty title will go
+title: I Write Code, Not Titles
 email: federicogmenozzi@gmail.com
-description: > # This means to ignore newlines until "baseurl:"
-    Posts that make you go "Huh. Cool."
+description: #> # This means to ignore newlines until "baseurl:"
 #baseurl: "" # the subpath of your site, e.g. /blog/
 #url: "http://yourdomain.com" # the base hostname & protocol for your site
 github_username: fmenozzi
