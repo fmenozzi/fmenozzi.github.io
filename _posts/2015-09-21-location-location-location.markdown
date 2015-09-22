@@ -70,9 +70,9 @@ Ignoring the bad practice of not checking the result of `malloc`, we can see tha
 
 As an aside, it's important to note that data in C is stored in <i>row-major order</i> - that is, consecutive elements in a single <i>row</i> are stored contiguously in memory.
 
-Now, look closely at how we're accessing the data: since we access the element at `(c, r)`, we're actually accessing the elements in column-major order. Because C stores consecutive elements in row-major order, this means that we're not accessing the underlying memory in a contiguous fashion. This makes our prefetcher all but worthless and results in cache thrashing.
+Now, look closely at how we're accessing the data: since we access the element at `(c,r)`, we're actually accessing the elements in column-major order. Because C stores consecutive elements in row-major order, this means that we're not accessing the underlying memory in a contiguous fashion. This makes our prefetcher all but worthless and results in cache thrashing.
 
-With this in mind, let's revisit our previous example:
+With this in mind, let's revisit our example:
 
 {% highlight c %}
 /*
@@ -104,8 +104,10 @@ int main()
 }
 {% endhighlight %}
 
-Notice that the only difference between the first and second example is that I am accessing the value at `(r,c)` in each iteration, instead of at `(c,r)`. This seemingly innocuous change results in a surprinsingly big performance boost: Running the second example takes 0.50 seconds while the first example takes 1.45 seconds.
+Notice that the only difference between the first and second example is that I am accessing the value at `(r,c)` in each iteration, instead of at `(c,r)`. This seemingly innocuous change results in a surprinsingly big performance boost: On my machine, running the second example takes 0.50 seconds, while the first example takes 1.45 seconds.
 
-This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Imagine if this kind of code was nested deep inside a series of performance-critical loops and you can start to imagine why such an improvement would be important. Additionally, the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely long, since the prefetcher is always going to be a few steps ahead of us.
+This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Imagine if this kind of code was nested deep inside a series of performance-critical loops and you can start to imagine why such an improvement would be important. Additionally, the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us.
 
-If you want to learn more about this phenomenon, I highly recommend checking out [Herb Sutter's talk on modern C++](https://channel9.msdn.com/Events/Build/2014/2-661). The post with the example that he mentions [can be found here](http://gameprogrammingpatterns.com/data-locality.html).
+Memory, it seems, is like real-estate - it's all about the location, location, location.
+
+<i>If you want to learn more about this phenomenon, I highly recommend checking out [Herb Sutter's talk on modern C++](https://channel9.msdn.com/Events/Build/2014/2-661). The post with the example that he mentions [can be found here](http://gameprogrammingpatterns.com/data-locality.html).</i>
