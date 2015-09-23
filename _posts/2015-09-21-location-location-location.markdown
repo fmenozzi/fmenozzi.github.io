@@ -68,9 +68,9 @@ int main()
 
 Ignoring the bad practice of not checking the result of `malloc`, we can see that we allocate an array of size WIDTH times HEIGHT to represent our two-dimensional array. The nested `for` loops iterate through the data as though it were a two-dimensional array of size WIDTH by HEIGHT.
 
-As an aside, it's important to note that data in C is stored in <i>row-major order</i> - that is, consecutive elements in a single <i>row</i> are stored contiguously in memory. The opposite would be <i>column-major order</i>
+As an aside, it's important to note that data in C is stored in <i>row-major order</i>. This means that consecutive elements in a single <i>row</i> are stored contiguously in memory, as opposed to <i>column-major order</i>, where elements in a <i>column</i> are stored contiguously. Here's a visual comparison:
 
-![Row Major Order](https://github.com/fmenozzi/fmenozzi.github.io/orderings.png)
+![Orderings]({{site.url}}/orderings.png "Orderings")
 
 Now, look closely at how we're accessing the data: since we access the element at `(c,r)`, we're actually accessing the elements in column-major order. Because C stores consecutive elements in row-major order, this means that we're not accessing the underlying memory in a contiguous fashion. This makes our prefetcher all but worthless and results in cache thrashing.
 
@@ -110,6 +110,6 @@ Notice that the only difference between the first and second example is that I a
 
 This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Imagine if this kind of code was nested deep inside a series of performance-critical loops and you can start to imagine why such an improvement would be important. Additionally, the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us.
 
-Memory, it seems, is like real-estate - it's all about the location, location, location.
+The fact that it's the <i>data</i>, rather than the code, that impacts performance here is not necessarily intuitive at first glance; after all, a byte is a byte, whether it's at address `0x4000` or `0x8000`. But it's important nonetheless to understand that <i>where</i> you store something can sometimes be more important than what you're storing in the first place. After all, it's all about location, location, location.
 
 <i>If you want to learn more about this phenomenon, I highly recommend checking out [Herb Sutter's talk on modern C++](https://channel9.msdn.com/Events/Build/2014/2-661). The post with the example that he mentions [can be found here](http://gameprogrammingpatterns.com/data-locality.html).</i>
