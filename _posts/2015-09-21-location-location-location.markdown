@@ -15,7 +15,7 @@ Location, Location, Location.
 
 By location, of course, I mean locations in memory - how best to organize your data to take full advantage of modern hardware. Programs today utilize complex data structures - lists, trees, graphs - to implement beautiful abstract algorithms in code. But at the end of the day, the only way the computer knows how to organize data is in contiguous blocks. So why is this important? To answer that question, we have to talk a little bit about <i>caches</i>.
 
-When a computer encounters a memory lookup (e.g. reading from an array), it will first check to see if that value is in one of its registers. If not, it has to make a relatively expensive roundtrip to main memory to fetch it. Here, "relatively expensive" means on the order of 100 nanoseconds. This may not seem like a lot, but a register access only takes a few hundred <i>picoseconds</i>, which is several orders of magnitude faster. In addition, 100-nanosecond memory reads require hundreds of CPU cycles to accees the data, cycles which could otherwise be spent doing useful work.
+When a computer encounters a memory lookup (e.g. reading from an array), it will first check to see if that value is in one of its registers. If not, it has to make a relatively expensive (~100 nanoseconds) round trip to main memory to fetch it. This may not seem like a lot, but a register access only takes a few hundred <i>picoseconds</i>, which is several orders of magnitude faster. In addition, 100-nanosecond memory reads require hundreds of CPU cycles to access the data, cycles which could otherwise be spent doing useful work.
 
 To address this problem, chip designers began encorporating caches into processors that would store frequently-accessed data in a piece of small, fast memory. Now, if the CPU needs an address, it can first check the fast cache to see if the data is there before proceeding to the slower main memory. Modern computers tend to come with multiple levels of caches, typically denoted L1, L2, etc. To give you an idea of the differences in size and access time of various memories, here's a table with specs from the Intel i7-2637 processor from 2011:
 
@@ -68,7 +68,9 @@ int main()
 
 Ignoring the bad practice of not checking the result of `malloc`, we can see that we allocate an array of size WIDTH times HEIGHT to represent our two-dimensional array. The nested `for` loops iterate through the data as though it were a two-dimensional array of size WIDTH by HEIGHT.
 
-As an aside, it's important to note that data in C is stored in <i>row-major order</i> - that is, consecutive elements in a single <i>row</i> are stored contiguously in memory.
+As an aside, it's important to note that data in C is stored in <i>row-major order</i> - that is, consecutive elements in a single <i>row</i> are stored contiguously in memory. The opposite would be <i>column-major order</i>
+
+![Row Major Order](https://github.com/fmenozzi/fmenozzi.github.io/orderings.png)
 
 Now, look closely at how we're accessing the data: since we access the element at `(c,r)`, we're actually accessing the elements in column-major order. Because C stores consecutive elements in row-major order, this means that we're not accessing the underlying memory in a contiguous fashion. This makes our prefetcher all but worthless and results in cache thrashing.
 
