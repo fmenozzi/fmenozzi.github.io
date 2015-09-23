@@ -15,12 +15,12 @@ Location, Location, Location.
 
 By location, of course, I mean locations in memory - how best to organize your data to take full advantage of modern hardware. Programs today utilize complex data structures - lists, trees, graphs - to implement beautiful abstract algorithms in code. But at the end of the day, the only way the computer knows how to organize data is in contiguous blocks. So why is this important? To answer that question, we have to talk a little bit about <i>caches</i>.
 
-When a computer encounters a memory lookup (e.g. reading from an array), it will first check to see if that value is in one of its registers. If not, it has to make a relatively expensive (~100 nanoseconds) round trip to main memory to fetch it. This may not seem like a lot, but a register access only takes a few hundred <i>picoseconds</i>, which is several orders of magnitude faster. In addition, 100-nanosecond memory reads require hundreds of CPU cycles to access the data, cycles which could otherwise be spent doing useful work.
+When a computer encounters a memory lookup (e.g. reading from an array), it will first check to see if that value is in one of its registers. If not, it has to make a relatively expensive (~100 nanoseconds) round trip to main memory to fetch it. This may not seem like a lot, but a register access only takes a few hundred <i>picoseconds</i>, which is several orders of magnitude faster. In addition, 100-nanosecond memory reads require hundreds of CPU cycles to complete, cycles which could otherwise be spent doing useful work.
 
 To address this problem, chip designers began encorporating caches into processors that would store frequently-accessed data in a piece of small, fast memory. Now, if the CPU needs an address, it can first check the fast cache to see if the data is there before proceeding to the slower main memory. Modern computers tend to come with multiple levels of caches, typically denoted L1, L2, etc. To give you an idea of the differences in size and access time of various memories, here's a table with specs from the Intel i7-2637 processor from 2011:
 
     | Memory       | Size (bytes)         | Access Time (ps) |
-    | ------------ | -------------------- | ---------------- |
+    |--------------|----------------------|------------------|
     | CPU Register | 1,000                | 300              |
     | L1 Cache     | 64,000               | 1,000            |
     | L2 Cache     | 256,000              | 3,000            |
@@ -66,7 +66,7 @@ int main()
 }
 {% endhighlight %}
 
-Ignoring the bad practice of not checking the result of `malloc`, we can see that we allocate an array of size WIDTH times HEIGHT to represent our two-dimensional array. The nested `for` loops iterate through the data as though it were a two-dimensional array of size WIDTH by HEIGHT.
+Ignoring the bad practice of not checking the result of `malloc` (and not subsequently freeing it), we can see that we allocate an array of size WIDTH times HEIGHT to represent our two-dimensional array. The nested `for` loops iterate through the data as though it were a two-dimensional array of size WIDTH by HEIGHT.
 
 As an aside, it's important to note that data in C is stored in <i>row-major order</i>. This means that consecutive elements in a single <i>row</i> are stored contiguously in memory, as opposed to <i>column-major order</i>, where elements in a <i>column</i> are stored contiguously. Here's a visual comparison:
 
@@ -106,9 +106,9 @@ int main()
 }
 {% endhighlight %}
 
-Notice that the only difference between the first and second example is that I am accessing the value at `(r,c)` in each iteration, instead of at `(c,r)`. This seemingly innocuous change results in a surprinsingly big performance boost: On my machine, running the second example takes 0.50 seconds, while the first example takes 1.45 seconds.
+Notice that the only difference between the first and second example is that I am accessing the value at `(r,c)` in each iteration, instead of at `(c,r)`. This seemingly innocuous change results in a surprinsingly big performance boost: On my machine, running the first example takes 1.45 seconds, while the second example takes 0.50 seconds.
 
-This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Imagine if this kind of code was nested deep inside a series of performance-critical loops and you can start to imagine why such an improvement would be important. Additionally, the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us.
+This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Our programs are logically identical and yet, just by changing <i>the order in which we iterate</i> we've improved the performance threefold. In fact, we can take this idea even further: the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us in placing the next items in the cache.
 
 The fact that it's the <i>data</i>, rather than the code, that impacts performance here is not necessarily intuitive at first glance; after all, a byte is a byte, whether it's at address `0x4000` or `0x8000`. But it's important nonetheless to understand that <i>where</i> you store something can sometimes be more important than what you're storing in the first place. After all, it's all about location, location, location.
 
