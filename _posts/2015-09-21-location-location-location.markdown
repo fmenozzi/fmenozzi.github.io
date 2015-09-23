@@ -19,16 +19,7 @@ When a computer encounters a memory lookup (e.g. reading from an array), it will
 
 To address this problem, chip designers began encorporating caches into processors that would store frequently-accessed data in a piece of small, fast memory. Now, if the CPU needs an address, it can first check the fast cache to see if the data is there before proceeding to the slower main memory. Modern computers tend to come with multiple levels of caches, typically denoted L1, L2, etc. To give you an idea of the differences in size and access time of various memories, here's a table with specs from the Intel i7-2637 processor from 2011:
 
-![Memory Hierarchy]({{site.url}}/memory-hierarchy.png "Hierarchy")
-
-    | Memory       | Size (bytes)         | Access Time (ps) |
-    |--------------|----------------------|------------------|
-    | CPU Register | 1,000                | 300              |
-    | L1 Cache     | 64,000               | 1,000            |
-    | L2 Cache     | 256,000              | 3,000            |
-    | L3 Cache     | 2-4,000,000          | 20,000           |
-    | Main Memory  | 4-16,000,000,000     | 100,000          |
-    | Disk         | 4-16,000,000,000,000 | 10,000,000,000   |
+![Memory Hierarchy]({{site.url}}/memory-hierarchy.png "Memory Hierarchy")
 
 The main takeaway here is that memory is organized in a hierarchy which trades access time for storage size the further down you go.
 
