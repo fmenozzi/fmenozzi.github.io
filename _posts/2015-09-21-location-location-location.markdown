@@ -19,6 +19,8 @@ When a computer encounters a memory lookup (e.g. reading from an array), it will
 
 To address this problem, chip designers began encorporating caches into processors that would store frequently-accessed data in a piece of small, fast memory. Now, if the CPU needs an address, it can first check the fast cache to see if the data is there before proceeding to the slower main memory. Modern computers tend to come with multiple levels of caches, typically denoted L1, L2, etc. To give you an idea of the differences in size and access time of various memories, here's a table with specs from the Intel i7-2637 processor from 2011:
 
+![Memory Hierarchy]({{site.url}}/memory-hierarchy.png "Hierarchy")
+
     | Memory       | Size (bytes)         | Access Time (ps) |
     |--------------|----------------------|------------------|
     | CPU Register | 1,000                | 300              |
@@ -108,7 +110,7 @@ int main()
 
 Notice that the only difference between the first and second example is that I am accessing the value at `(r,c)` in each iteration, instead of at `(c,r)`. This seemingly innocuous change results in a surprinsingly big performance boost: On my machine, running the first example takes 1.45 seconds, while the second example takes 0.50 seconds.
 
-This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Our programs are logically identical and yet, just by changing <i>the order in which we iterate</i> we've improved the performance threefold. In fact, we can take this idea even further: the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us in placing the next items in the cache.
+This may not seem like a lot, but think about it: by swapping <i>two characters</i> in our code that control memory access patterns, we made the program run <i>three times faster</i>. Our programs are logically identical, but by changing <i>the order in which we iterate</i> we've improved the performance threefold. In fact, we can take this idea even further: the presence of the prefetcher means that, if we access our data contiguously, we are essentially extending our cache infinitely, since the prefetcher is always going to be a few steps ahead of us in placing the next items in the cache.
 
 The fact that it's the <i>data</i>, rather than the code, that impacts performance here is not necessarily intuitive at first glance; after all, a byte is a byte, whether it's at address `0x4000` or `0x8000`. But it's important nonetheless to understand that <i>where</i> you store something can sometimes be more important than what you're storing in the first place. After all, it's all about location, location, location.
 
