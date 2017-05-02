@@ -1,3 +1,18 @@
 #federico-img {
     border-radius: 50%;
 }
+
+#sidebar {
+    float: left;
+    left: 0;
+}
+
+#content {
+    float: right;
+    right: 0;
+}
+
+body {
+    margin-left: 4em;
+    margin-right: 4em;
+}
