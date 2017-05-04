@@ -1,15 +1,21 @@
 $(function() {
     let routes = {
         "/about": function() {
-            alert("About");
+            $("#about").show();
+            $("#projects").hide();
+            $("#blog").hide();
         },
 
         "/projects": function() {
-            alert("Projects");
+            $("#about").hide();
+            $("#projects").show();
+            $("#blog").hide();
         },
 
         "/blog": function() {
-            alert("Blog");
+            $("#about").hide();
+            $("#projects").hide();
+            $("#blog").show();
         },
     };
 
