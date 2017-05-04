@@ -1,15 +1,17 @@
-let routes = {
-    "/about": function() {
-        console.log("ABOUT");
-    },
+$(function() {
+    let routes = {
+        "/about": function() {
+            alert("About");
+        },
 
-    "/projects": function() {
-        console.log("PROJECTS");
-    },
+        "/projects": function() {
+            alert("Projects");
+        },
 
-    "/blog": function() {
-        console.log("BLOG");
-    },
-};
+        "/blog": function() {
+            alert("Blog");
+        },
+    };
 
-Router(routes).init();
+    Router(routes).init();
+});
