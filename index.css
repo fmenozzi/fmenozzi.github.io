@@ -17,6 +17,17 @@ body {
     bottom: 0;
 }
 
+#sidebar:after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    display: block;
+    background-color: #aaaaaa;
+    width: 2px;
+    top: 50px;
+    bottom: 50px;
+}
+
 .sidebar-active {
     background-color: #eeeeee;
 }
