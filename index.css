@@ -12,12 +12,14 @@ body {
     float: left;
     width: 35%;
     background: #aa8888;
+    box-sizing: border-box;
 }
 
 #content {
     float: left;
     width: 65%;
     background: #88aa88;
+    box-sizing: border-box;
 }
 
 #content div {
