@@ -1,7 +1,6 @@
 body {
-    margin-left: 4em;
-    margin-right: 4em;
     font-family: 'Ubuntu Mono';
+    margin: 0px;
 }
 
 #federico-img {
@@ -9,19 +8,49 @@ body {
 }
 
 #sidebar {
-    float: left;
     width: 35%;
     background: #aa8888;
     box-sizing: border-box;
+    position: fixed;
+    padding: 1em;
+    top: 0;
+    bottom: 0;
 }
 
 #content {
-    float: left;
     width: 65%;
+    margin-left: 35%;
     background: #88aa88;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
-#content div {
+#content > div {
     display: none;
+}
+
+.no-style {
+    list-style: none;
+    padding: 0;
+}
+
+.about-li-icon {
+    background: #8888aa;
+    align-self: center;
+}
+
+.about-li-content {
+    background: #aaaa88;
+    flex-grow: 1;
+    align-self: center;
+    margin-left: 1em;
+}
+
+.about-li-icon > img {
+    width: 100px;
+    height: 100px;
+}
+
+.about-li {
+    display: flex;
 }
