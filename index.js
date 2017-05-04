@@ -19,5 +19,5 @@ $(function() {
         },
     };
 
-    Router(routes).init();
+    Router(routes).init("/about");
 });
