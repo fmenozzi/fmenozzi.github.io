@@ -10,11 +10,13 @@ body {
 
 #sidebar {
     float: left;
-    left: 0;
+    width: 35%;
+    background: #aa8888;
 }
 
 #content {
-    float: right;
-    right: 0;
+    float: left;
+    width: 65%;
+    background: #88aa88;
 }
 
