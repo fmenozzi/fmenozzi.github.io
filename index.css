@@ -61,7 +61,10 @@ body {
     margin-left: 30%;
     overflow: hidden;
     box-sizing: border-box;
-    padding: 1em 2em;
+    padding-left: 2em;
+    padding-right: 8em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 #content > div {
