@@ -1,6 +1,7 @@
 body {
     color: #333;
     margin: 0px;
+    overflow-y: scroll;
 }
 
 #federico-img {
