@@ -99,3 +99,38 @@ body {
 #education {
     margin-bottom: 4em;
 }
+
+.projects-li-icon {
+    align-self: center;
+}
+
+.projects-li-content {
+    flex-grow: 1;
+    align-self: center;
+    margin-left: 2em;
+}
+
+.projects-li-icon > i {
+    border: 4px solid black;
+    font-size: 2.5em;
+    color: #22cc22;
+    width: 100px;
+    height: 80px;
+    padding-left: 0.2em;
+    box-sizing: border-box;
+    background-color: #333333;
+    border-color: #777777;
+}
+
+.projects-li-icon > img {
+    width: 100px;
+}
+
+.projects-li {
+    display: flex;
+    margin-top: 2em;
+}
+
+.projects-project-title {
+    margin-top: 0;
+}
