@@ -162,3 +162,13 @@ a:hover {
     color: white;
     background-color: #3572a5;
 }
+
+.lang-java {
+    color: white;
+    background-color: #b07219;
+}
+
+.lang-javascript {
+    color: white;
+    background-color: #f1e05a;
+}
