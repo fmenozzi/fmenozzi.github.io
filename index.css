@@ -67,7 +67,11 @@ a:hover {
 }
 
 .sidebar-links li a:hover {
-    color: #aabbcc;
+    color: #ca5662;
+}
+
+#sidebar-name {
+    color: #333;
 }
 
 #content {
