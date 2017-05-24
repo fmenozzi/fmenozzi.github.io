@@ -74,6 +74,14 @@ a:hover {
     color: #333;
 }
 
+#home-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
 #content {
     font-family: 'Roboto', sans-serif;
     width: 70%;
@@ -217,6 +225,7 @@ a:hover {
         border-bottom: 1px solid #aaaaaa;
         background-color: white;
         padding: 0 0.7em
+        z-index: 99;
     }
 
     #content {
