@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+
+#fm {
+    font-size: 50pt;
+    font-family: 'Limelight';
+    border-radius: 50%;
+    border: 2px solid;
+    width: 2.3em;
+    height: 2.3em;
+    line-height: 2.3em;
+    text-align: center;
+}
+
 body {
     color: #333;
     margin: 0px;
@@ -78,6 +94,8 @@ a:hover {
 #home-content {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     top: 0;
     bottom: 0;
