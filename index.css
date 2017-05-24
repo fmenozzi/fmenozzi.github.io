@@ -221,6 +221,20 @@ a:hover {
         padding-right: 2em;
     }
 
+    .about-li {
+        display: block;
+    }
+
+    .about-li-icon {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+
+    .about-li-content {
+        margin-left: 0;
+        text-align: justify;
+    }
+
     #sidebar {
         width: 83%;
         left: -83%;
