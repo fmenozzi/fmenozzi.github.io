@@ -80,6 +80,7 @@ a:hover {
     position: absolute;
     top: 0;
     bottom: 0;
+    padding-right: 8em;
 }
 
 #content {
@@ -224,8 +225,13 @@ a:hover {
         top: 0;
         border-bottom: 1px solid #aaaaaa;
         background-color: white;
-        padding: 0 0.7em
+        padding: 0 0.7em;
         z-index: 99;
+    }
+
+    #home-content {
+        padding-right: 2em;
+        text-align: justify;
     }
 
     #content {
