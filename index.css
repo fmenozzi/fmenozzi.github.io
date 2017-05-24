@@ -20,6 +20,10 @@ a:hover {
     margin: auto;
 }
 
+#mobile-navbar {
+    display: none;
+}
+
 #sidebar {
     font-family: 'Ubuntu Mono';
     width: 30%;
@@ -171,4 +175,68 @@ a:hover {
 .lang-javascript {
     color: white;
     background-color: #f1e05a;
+}
+
+#mobile-navbar-bogus-buffer {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 100;
+    transition: background-color 200ms;
+}
+
+@media(max-width: 767px) {
+    #navbar-button {
+        border: 0;
+        background-color: inherit;
+        font-size: 2em;
+        vertical-align: middle;
+    }
+
+    body {
+        margin-top: 4em;
+    }
+
+    #mobile-navbar {
+        line-height: 4em;
+        display: inline;
+        position: fixed;
+        height: 4em;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-bottom: 1px solid #aaaaaa;
+        background-color: white;
+        padding: 0 0.7em
+    }
+
+    #content {
+        margin-left: 0;
+        width: auto;
+    }
+
+    #sidebar {
+        width: 83%;
+        left: -83%;
+        background-color: white;
+        border-right: 2px solid #aaaaaa;
+        transition: left 200ms;
+        z-index: 101;
+    }
+
+    #sidebar:after {
+        display: none;
+    }
+
+    #sidebar.sidebar-visible {
+        left: 0;
+    }
+
+    #mobile-navbar-bogus-buffer.sidebar-visible {
+        display: inline;
+    }
 }
