@@ -1,17 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Limelight');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
 #fm {
     font-size: 50pt;
-    font-family: 'Limelight';
+    font-family: 'Ubuntu Mono';
     border-radius: 50%;
     border: 2px solid;
-    width: 2.3em;
-    height: 2.3em;
-    line-height: 2.3em;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
     text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#federico-img {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 200px;
+    margin-bottom: 2em;
 }
 
 body {
@@ -28,13 +38,6 @@ a {
 
 a:hover {
     color: #ff8097;
-}
-
-#federico-img {
-    border-radius: 50%;
-    display: block;
-    margin: auto;
-    width: 200px;
 }
 
 #mobile-navbar {
@@ -100,6 +103,11 @@ a:hover {
     top: 0;
     bottom: 0;
     padding-right: 8em;
+}
+
+#home-content-text {
+    font-size: 1.5em;
+    text-align: justify;
 }
 
 #content {
