@@ -42,5 +42,5 @@ $(function() {
 
     $("#mobile-navbar-bogus-buffer").click(function() {
         $("#sidebar, #mobile-navbar-bogus-buffer").removeClass("sidebar-visible");
-    })
+    });
 });
