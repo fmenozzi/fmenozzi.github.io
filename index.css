@@ -33,7 +33,8 @@ a #fm {
     border-radius: 3%;
     display: block;
     margin: auto;
-    width: 600px;
+    width: 100%;
+    max-width: 4048px;
     margin-bottom: 2em;
 }
 
