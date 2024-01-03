@@ -1,301 +1,32 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Federico Menozzi</title>
-
-        <link href="index.css" rel="stylesheet" type="text/css">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"
-              integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-              crossorigin="anonymous">
-
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-                integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous"></script>
-        <script src="index.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
-        <div id="mobile-navbar">
-            <button id="navbar-button">
-                <i class="fa fa-bars fa-fw"></i>
-            </button>
-        </div>
-
-        <div id="mobile-navbar-bogus-buffer">
-
-        </div>
-
-        <div id="sidebar">
-            <a href="#/">
-                <p id="fm" class="noselect">
-                    fm
-                </p>
-            </a>
-
-            <a href="#/"><h1 id="sidebar-name" class="noselect">Federico Menozzi</h1></a>
-            <h3 class="noselect">Software Developer</h3>
-
-            <ul class="no-style sidebar-links">
-                <li class="noselect"><a href="#/"><i class="fa fa-home fa-fw"></i>Home</a></li>
-                <li class="noselect"><a href="#/about"><i class="fa fa-user fa-fw"></i>About</a></li>
-                <li class="noselect"><a href="#/projects"><i class="fa fa-code fa-fw"></i>Projects</a></li>
-                <li class="noselect"><a href="mailto:federicogmenozzi@gmail.com"><i class="fa fa-envelope fa-fw"></i>Email</a></li>
-                <li class="noselect"><a href="http://www.github.com/fmenozzi"><i class="fa fa-github fa-fw"></i>GitHub</a></li>
-                <li class="noselect"><a href="res/federico-menozzi-resume.pdf"><i class="fa fa-file-pdf-o fa-fw"></i>Resume</a></li>
+        <div class="navbar">
+            <div class="navbar-title">
+                federico menozzi
+            </div>
+            <ul>
+                <li><a href="index.html" class="current-page-link">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="projects.html">projects</a></li>
+                <li><a href="contact.html">contact</a></li>
             </ul>
+            <hr>
         </div>
 
-        <div id="content">
-            <div id="home">
-                <div id="home-content">
-                    <a href="#/"><img class="noselect" alt="Me!" id="federico-img" src="res/federico.jpg" style="border: 0px solid black;"/></a>
+        <div id="home-content">
+            Hello!
 
-                    <p id="home-content-text">
-                        Hello! My name is Federico Menozzi, a recent graduate of UNC's program in Computer Science. Check out
-                        <a href="#/about">where I've been</a> and <a href="#/projects">what I've done</a>.
-                    </p>
-                </div>
-            </div>
+            <p>I'm Federico Menozzi, an enthusiast of technologies of all kinds. I enjoy programming, software engineering, systems administration, game development, electronics design, 3D printing, and anything that allows me to be creative and solve real problems.</p>
 
-            <div id="about">
-                <div id="education">
-                    <h3>Education</h3>
-                    <ul class="no-style">
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="UNC!" src="res/unc-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I earned my MS in Computer Science at UNC, finishing with a graduate GPA
-                                of 4.0 out of 4.0. Relevant courses include Computer Vision, Advanced Algorithms, and
-                                Mobile Computing Systems.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="UNC!" src="res/unc-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I earned my BS in Computer Science with Honors at UNC, finishing with an
-                                undergraduate GPA of 3.6 out of 4.0. Relevant courses include Compilers,
-                                Operating Systems, Algorithms, Computer Graphics, Parallel and Distributed
-                                Computing, Computer Security, and many others.
-                            </div>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div id="experience">
-                    <h3>Experience</h3>
-                    <ul class="no-style">
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="Google!" src="res/google-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I started working as a Software Engineer in Mountain View in Aug 2017. I
-                                am currently working in a subteam of Google Search, helping to improve the
-                                quality of the interest feed and beyond.
-                            </div>
-                        </li>
-
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="Google!" src="res/google-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I worked at Google as a Software Engineering Intern from May 2016 to Aug
-                                2016. There, I worked on the <a href="http://skia.org">Skia</a> graphics
-                                engine, where I developed modern C++ code to emit GLSL shaders that render
-                                gradients with hard stops on the GPU more accurately and efficiently. As a
-                                result, over half of all hard stop gradients now render accurately with no
-                                loss in performance on all platforms that utilize Skia for 2D rendering
-                                (Chrome, Firefox, Android, etc.).
-                            </div>
-                        </li>
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="IBM!" src="res/ibm-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I worked at IBM as an <a href="https://www-01.ibm.com/employment/us/extremeblue/">
-                                Extreme Blue</a> Technical Intern from May 2015 to Aug 2015. I worked on implementing
-                                a POSIX-compliant FUSE file system interface for Openstack Swift object storage in C
-                                and C++. I also travelled to IBM's HQ in Armonk, NY to pitch the project to senior
-                                executives.
-                            </div>
-                        </li>
-                        <li class="about-li">
-                            <div class="about-li-icon">
-                                <img alt="ARA!" src="res/ara-logo.png" />
-                            </div>
-
-                            <div class="about-li-content">
-                                I worked at <a href="https://www.ara.com/">ARA</a> as a Technical Intern from July
-                                2014 to Aug 2014. I contributed heavily to the Java frontend of
-                                <a href="https://www.biogearsengine.com/">BioGears</a>, an open-source human physiology
-                                engine. I also translated key components of the core engine from C++ to Java for use
-                                in the frontend GUI.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="projects">
-                <div id="projects-list">
-                    <h3>Personal Projects</h3>
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi/shadertoy-rs">
-                                            <h4 class="projects-project-title">shadertoy-rs</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-rust">Rust</li>
-                                    </ul>
-                                </div>
-
-                                A desktop client for <a href="https://www.shadertoy.com/">Shadertoy</a>, written in Rust. Supports texture,
-                                resolution, time, and mouse uniforms, among others. Shaders that conform to supported uniforms can be run
-                                with no modifications to the original Shadertoy source code. Also supports downloading shaders from the
-                                Shadertoy website.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi/argparser">
-                                            <h4 class="projects-project-title">argparser</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-cpp">C++</li>
-                                    </ul>
-                                </div>
-
-                                Simple command-line parser for C++11 programs. Single-header library that emphasizes simplicity, ease-of-use,
-                                and a clean API.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi/kQuery">
-                                            <h4 class="projects-project-title">kQuery</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-c">C</li>
-                                    </ul>
-                                </div>
-
-                                A SQL interface to your Linux kernel. A proof-of-concept that treats your operating system like a SQL database
-                                and allows system diagnostics to be performed as SQL queries. Like <a href="https://osquery.io">osquery</a>,
-                                but only for Linux and only with a single <code>process</code> table.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi/miniMAT">
-                                            <h4 class="projects-project-title">miniMAT</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-cpp">C++</li>
-                                    </ul>
-                                </div>
-
-                                A small MATLAB interpreter written in C++11. Supports a subset of MATLAB operations including simple scalar
-                                and matrix literal expression evaluation, common built-in MATLAB functions (<code>who</code>, <code>whos</code>,
-                                etc.), and REPL with error diagnostic output closely resembling MATLAB output.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi/setup">
-                                            <h4 class="projects-project-title">setup</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-shell">Shell</li>
-                                        <li class="lang lang-python">Python</li>
-                                    </ul>
-                                </div>
-
-                                My personal Linux development environment. Contains various dotfiles, config files, scripts, custom
-                                git commands, etc. Easily deployable via <code>make</code>.
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="no-style">
-                        <li class="projects-li">
-                            <div class="projects-li-content">
-                                <div class="project-header">
-                                    <div>
-                                        <a href="https://github.com/fmenozzi?tab=repositories">
-                                            <h4 class="projects-project-title">miscellaneous</h4>
-                                        </a>
-                                    </div>
-
-                                    <ul class="project-header-ul no-style">
-                                        <li class="lang lang-c">C</li>
-                                        <li class="lang lang-cpp">C++</li>
-                                        <li class="lang lang-rust">Rust</li>
-                                        <li class="lang lang-java">Java</li>
-                                        <li class="lang lang-python">Python</li>
-                                        <li class="lang lang-javascript">Javascript</li>
-                                    </ul>
-                                </div>
-
-                                All the rest of my personal projects and school assignments. These include software raytracers and
-                                rasterizers, 2D graphics engines, compilers, games, Android apps, and more.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <p>Learn more about <a href="about.html">who I am</a> and <a href="projects.html">what I've done</a>.</p>
         </div>
     </body>
-</html>
+<html>

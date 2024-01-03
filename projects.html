@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Projects</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-title">
+                federico menozzi
+            </div>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="projects.html" class="current-page-link">projects</a></li>
+                <li><a href="contact.html">contact</a></li>
+            </ul>
+            <hr>
+        </div>
+
+        <div id="projects-content">
+            All of my projects can be found on my <a href="https://github.com/fmenozzi">GitHub profile</a>. Some highlights are included here.
+
+            <h2>Software</h2>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/shadertoy-rs">
+                                <h4 class="projects-project-title">shadertoy-rs</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-rust">Rust</li>
+                            </ul>
+                        </div>
+                        A desktop client for <a href="https://www.shadertoy.com">Shadertoy</a>. Supports texture, resolution, time, and mouse uniforms, among others. Shaders that conform to supported uniforms can be run with no modifications to the original Shadertoy source code. Also supports downloading shaders from the Shadertoy website.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/hn">
+                                <h4 class="projects-project-title">hn</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-go">Go</li>
+                            </ul>
+                        </div>
+                        A simple commandline <a href="https://news.ycombinator.com">Hacker News</a> client. Makes use of the HN API for browsing best/top/new stories and the associated Algolia API for searching items by date/popularity. Output can optionally be formatting for piping into terminal markdown programs such as <a href="https://github.com/swsnr/mdcat"><code>mdcat</code></a>.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/factory-escape">
+                                <h4 class="projects-project-title">Factory Escape</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-gdscript">GDScript</li>
+                            </ul>
+                        </div>
+                        2D action platformer game written using the <a href="https://godotengine.org">Godot game engine</a>. Gameplay includes basic combat and multiple abilities to find, metroidvania-style. Featuring sound design and music by <a href="https://vincentsalgueiro.com/">Vincent Salgueiro</a>. Binary downloads are available on the associated <a href="https://fmenozzi.itch.io/factory-escape">itch.io</a> page.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/argparser">
+                                <h4 class="projects-project-title">argparser</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-cpp">C++</li>
+                            </ul>
+                        </div>
+                        Simple commandline parser for C and C++11 programs. Single-header library that emphasizes simplicity, ease-of-use, and a clean API.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/kQuery">
+                                <h4 class="projects-project-title">kQuery</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-c">C</li>
+                            </ul>
+                        </div>
+                        A SQL interface to your Linux kernel. A proof-of-concept that treats your operating system like a SQL database and allows system diagnostics to be performed as SQL queries. Like <a href="https://osquery.io">osquery</a>, but only for Linux and only with a single <code>process</code> table.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/miniMAT">
+                                <h4 class="projects-project-title">miniMat</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-cpp">C++</li>
+                            </ul>
+                        </div>
+                        A small MATLAB interpreter written in C++11. Supports a subset of MATLAB operations including simple scalar and matrix literal expression evaluation, common built-in MATLAB functions (<code>who</code>, <code>whos</code>, etc.), and a REPL with error diagnostic output closely resembling MATLAB output.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi/env">
+                                <h4 class="projects-project-title">env</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-shell">Shell</li>
+                                <li class="lang lang-python">Python</li>
+                            </ul>
+                        </div>
+                        My personal Linux development environment. Contains various dotfiles, scripts, custom commands, systemd services, etc.
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="no-style">
+                <li class="projects-li">
+                    <div class="projects-li-content">
+                        <div class="project-header">
+                            <a href="https://github.com/fmenozzi?tab=repositories">
+                                <h4 class="projects-project-title">miscellaneous</h4>
+                            </a>
+                            <ul class="project-header-ul">
+                                <li class="lang lang-c">C</li>
+                                <li class="lang lang-cpp">C++</li>
+                                <li class="lang lang-rust">Rust</li>
+                                <li class="lang lang-java">Java</li>
+                                <li class="lang lang-python">Python</li>
+                            </ul>
+                        </div>
+                        All the rest of my personal projects and school assignments. These include software raytracers and rasterizers, 2D graphics engines, compilers, games, Android apps, and more.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+<html>

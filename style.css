@@ -1,0 +1,184 @@
+:root {
+    /* Dark colors */
+    --nord-polar-night-0: #2e3440;
+    --nord-polar-night-1: #3b4252;
+    --nord-polar-night-2: #434c5e;
+    --nord-polar-night-3: #4c566a;
+
+    /* White colors */
+    --nord-snow-storm-0: #d8dee9;
+    --nord-snow-storm-1: #e5e9f0;
+    --nord-snow-storm-2: #eceff4;
+
+    --nord-frost-0: #8fbcbb; /* Light green */
+    --nord-frost-1: #88c0d0; /* Sky blue */
+    --nord-frost-2: #81a1c1; /* Periwinkle */
+    --nord-frost-3: #5e81ac; /* Darker periwinkle */
+
+    --nord-aurora-0: #bf616a; /* Red */
+    --nord-aurora-1: #d08770; /* Orange */
+    --nord-aurora-2: #ebcb8b; /* Yellow */
+    --nord-aurora-3: #a3be8c; /* Green */
+    --nord-aurora-4: #b48ead; /* Lavender */
+
+    --color-bg: var(--nord-polar-night-0);
+    --color-fg: var(--nord-snow-storm-0);
+    --color-link: var(--nord-frost-1);
+    --color-link-visited: var(--nord-aurora-4);
+    --color-link-hover: var(--nord-snow-storm-2);
+
+    --color-rust: #dea584;
+    --color-c: #555555;
+    --color-cpp: #f34b7d;
+    --color-shell: #89e051;
+    --color-python: #3572a5;
+    --color-java: #b07219;
+    --color-go: #00add8;
+    --color-gdscript: #355570;
+}
+
+/* General */
+.no-style {
+    list-style: none;
+    padding: 0;
+}
+body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    line-height: 1.6;
+    max-width: 60vw;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    font-family: monospace;
+    font-size: 16pt;
+}
+h1,h2,h3,h4 {
+    line-height: 1.2;
+}
+a {
+    text-underline-offset: 0.3em;
+}
+a:link {
+    color: var(--color-link);
+}
+a:visited {
+    color: var(--color-link-visited);
+}
+a:hover {
+    color: var(--color-link-hover);
+}
+.current-page-link {
+    color: var(--color-fg) !important;
+}
+
+/* Mobile-specific */
+@media(max-width: 767px) {
+    body {
+        max-width: 90vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin-top: 2em;
+    }
+}
+
+/* Top navbar */
+.navbar-title {
+    font-weight: bold;
+}
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.navbar li {
+    display: inline;
+}
+.navbar li a {
+    padding-right: 1em;
+}
+hr {
+    color: var(--color-fg);
+    margin-bottom: 1.5em;
+}
+
+/* About page */
+.about-li-icon {
+    align-self: center;
+}
+.about-li-content {
+    flex-grow: 1;
+    align-self: center;
+    margin-left: 2em;
+}
+.about-li-icon > img {
+    width: 70px;
+    background-color: var(--color-fg);
+}
+.about-li {
+    display: flex;
+    margin-top: 2em;
+}
+#experience ul {
+    padding-left: 0;
+}
+#education {
+    margin-bottom: 4em;
+}
+#education ul {
+    padding-left: 0;
+}
+
+/* Projects page */
+.projects-li {
+    margin-top: 2em;
+}
+.projects-project-title {
+    vertical-align: bottom;
+    display: inline;
+}
+.project-header {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--color-fg);
+    margin-bottom: 2em;
+    padding-bottom: 0.2em;
+}
+.project-header a {
+    text-decoration: none;
+}
+.project-header-ul {
+    text-align: right;
+    flex-grow: 1;
+}
+.lang {
+    font-weight: bold;
+    font-size: 12pt;
+    color: white;
+    display: inline-block;
+    border-radius: 0.3em;
+    padding: 0.2em 0.6em;
+    margin: 0.1em 0;
+}
+.lang-rust {
+    background-color: var(--color-rust);
+}
+.lang-c {
+    background-color: var(--color-c);
+}
+.lang-cpp {
+    background-color: var(--color-cpp);
+}
+.lang-shell {
+    background-color: var(--color-shell);
+}
+.lang-python {
+    background-color: var(--color-python);
+}
+.lang-java {
+    background-color: var(--color-java);
+}
+.lang-go {
+    background-color: var(--color-go);
+}
+.lang-gdscript {
+    background-color: var(--color-gdscript);
+}
