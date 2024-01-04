@@ -22,19 +22,19 @@
     --nord-aurora-4: #b48ead; /* Lavender */
 
     --color-bg: var(--nord-polar-night-0);
-    --color-fg: var(--nord-snow-storm-0);
+    --color-fg: var(--nord-snow-storm-2);
     --color-link: var(--nord-frost-1);
     --color-link-visited: var(--nord-aurora-4);
-    --color-link-hover: var(--nord-snow-storm-2);
+    --color-link-hover: var(--nord-frost-3);
 
-    --color-rust: #dea584;
-    --color-c: #555555;
-    --color-cpp: #f34b7d;
-    --color-shell: #89e051;
-    --color-python: #3572a5;
+    --color-rust: var(--nord-aurora-1);
+    --color-c: var(--nord-polar-night-3);
+    --color-cpp: var(--nord-aurora-0);
+    --color-shell: var(--nord-aurora-3);
+    --color-python: var(--nord-frost-3);
     --color-java: #b07219;
-    --color-go: #00add8;
-    --color-gdscript: #355570;
+    --color-go: var(--nord-frost-1);
+    --color-gdscript: var(--nord-frost-3);
 
     --icon-padding: 0.5em;
 }
