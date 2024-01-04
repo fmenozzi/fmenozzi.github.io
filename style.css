@@ -35,6 +35,8 @@
     --color-java: #b07219;
     --color-go: #00add8;
     --color-gdscript: #355570;
+
+    --icon-padding: 0.5em;
 }
 
 /* General */
@@ -101,21 +103,39 @@ hr {
 }
 
 /* About page */
-.about-li-icon {
-    align-self: center;
-}
-.about-li-content {
-    flex-grow: 1;
-    align-self: center;
-    margin-left: 2em;
-}
-.about-li-icon > img {
-    width: 70px;
-    background-color: var(--color-fg);
-}
 .about-li {
     display: flex;
-    margin-top: 2em;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+.about-li-content {
+    flex-basis: 90%;
+}
+.about-li-icon {
+    flex-basis: 10%;
+    flex-shrink: 0;
+    padding: var(--icon-padding);
+    position: relative;
+    height: 10%;
+    width: 10%;
+    min-width: 3em;
+    max-width: 5em;
+    aspect-ratio: 1;
+    border-radius: 1em;
+    background-color: var(--nord-snow-storm-2);
+}
+.about-li-icon img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    object-fit: scale-down;
+    object-position: center;
+    width: calc(100% - (var(--icon-padding) * 2));
+    height: calc(100% - (var(--icon-padding) * 2));
 }
 #experience ul {
     padding-left: 0;
