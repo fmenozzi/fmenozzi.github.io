@@ -186,7 +186,7 @@ hr {
     padding-bottom: 0.2em;
     >a {
         text-decoration: none;
-        flex-basis: 33%;
+        flex-basis: 40%;
         &:visited {
             color: var(--color-link);
         }
@@ -197,7 +197,7 @@ hr {
         flex-wrap: wrap;
         gap: 0.3rem;
         justify-content: flex-end;
-        flex-basis: 66%;
+        flex-basis: 60%;
         flex-grow: 1;
         text-indent: 0;
         padding: 0;
@@ -251,5 +251,14 @@ hr {
         padding-left: 5vw;
         padding-right: 5vw;
         font-size: var(--font-size-sm);
+    }
+    .navbar {
+        ul {
+            li {
+                a {
+                    font-size: var(--font-size-md);
+                }
+            }
+        }
     }
 }
