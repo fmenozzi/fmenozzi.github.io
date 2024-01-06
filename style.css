@@ -254,6 +254,7 @@ hr {
     }
     .navbar {
         ul {
+            gap: 1.0rem;
             li {
                 a {
                     font-size: var(--font-size-md);
