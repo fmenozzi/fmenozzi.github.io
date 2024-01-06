@@ -122,17 +122,17 @@ hr {
     }
 }
 
-/* About page */
-.about-li {
+/* Bio page */
+.bio-li {
     display: flex;
     align-items: center;
     gap: calc(var(--spacer) / 2);
     margin-bottom: calc(var(--spacer) / 2);
 }
-.about-li-content {
+.bio-li-content {
     flex-basis: 90%;
 }
-.about-li-icon {
+.bio-li-icon {
     flex-basis: 10%;
     flex-shrink: 0;
     padding: var(--icon-padding);
