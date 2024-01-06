@@ -66,15 +66,15 @@ h1,h2,h3,h4 {
 }
 a {
     text-underline-offset: 0.3rem;
-    &:link {
-        color: var(--color-link);
-    }
-    &:visited {
-        color: var(--color-link-visited);
-    }
-    &:hover,&:focus {
-        color: var(--color-link-hover);
-    }
+}
+a:link {
+    color: var(--color-link);
+}
+a:visited {
+    color: var(--color-link-visited);
+}
+a:hover, a:focus {
+    color: var(--color-link-hover);
 }
 code {
     background-color: var(--nord-polar-night-3);
@@ -96,30 +96,31 @@ hr {
     font-weight: bold;
     font-size: var(--font-size-xl);
 }
-.navbar {
-    ul {
-        list-style-type: none;
-        padding: 0;
-        display: flex;
-        gap: 1.5rem;
-        li {
-            display: inline;
-            a {
-                text-underline-offset: 0.35rem;
-                font-weight: bold;
-                font-size: var(--font-size-lg);
-                &:visited {
-                    color: var(--color-link);
-                }
-                &:hover,&:focus {
-                    color: var(--color-link-hover);
-                }
-                &.current-page-link {
-                    color: var(--color-fg) !important;
-                }
-            }
-        }
-    }
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+.navbar ul li {
+    display: inline;
+}
+.navbar ul li a {
+    text-underline-offset: 0.35rem;
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+}
+.navbar ul li a:visited {
+    color: var(--color-link);
+}
+.navbar ul li a:hover {
+    color: var(--color-link-hover);
+}
+.navbar ul li a:focus {
+    color: var(--color-link-hover);
+}
+.navbar ul li a.current-page-link {
+    color: var(--color-fg) !important;
 }
 
 /* Bio page */
@@ -144,31 +145,32 @@ hr {
     aspect-ratio: 1;
     border-radius: 1em;
     background-color: var(--nord-snow-storm-2);
-    img {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: auto;
-        object-fit: scale-down;
-        object-position: center;
-        width: calc(100% - (var(--icon-padding) * 2));
-        height: calc(100% - (var(--icon-padding) * 2));
-    }
 }
-#education,#experience {
+.bio-li-icon img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    object-fit: scale-down;
+    object-position: center;
+    width: calc(100% - (var(--icon-padding) * 2));
+    height: calc(100% - (var(--icon-padding) * 2));
+}
+#education, #experience {
     margin-bottom: var(--spacer);
-    ul {
-        padding-left: 0;
-    }
+}
+#education ul {
+    padding-left: 0;
+}
+#experience ul {
+    padding-left: 0;
 }
 
 /* Projects page */
-#projects-content {
-    h2 {
-        margin-top: calc(var(--spacer) / 4);
-    }
+#projects-content h2 {
+    margin-top: calc(var(--spacer) / 4);
 }
 .projects-li {
     margin-top: calc(var(--spacer) / 4);
@@ -184,31 +186,31 @@ hr {
     border-bottom: 1px solid var(--color-fg);
     margin-bottom: calc(var(--spacer) / 4);
     padding-bottom: 0.2em;
-    >a {
-        text-decoration: none;
-        flex-basis: 40%;
-        &:visited {
-            color: var(--color-link);
-        }
-    }
-    .project-header-ul {
-        text-align: right;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.3rem;
-        justify-content: flex-end;
-        flex-basis: 60%;
-        flex-grow: 1;
-        text-indent: 0;
-        padding: 0;
-        li {
-            display: flex;
-            margin: 0;
-            flex-direction: column;
-            align-items: center;
-            padding: 0.1rem 0.5rem;
-        }
-    }
+}
+.project-header a {
+    text-decoration: none;
+    flex-basis: 40%;
+}
+.project-header a:visited {
+    color: var(--color-link);
+}
+.project-header .project-header-ul {
+    text-align: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    justify-content: flex-end;
+    flex-basis: 60%;
+    flex-grow: 1;
+    text-indent: 0;
+    padding: 0;
+}
+.project-header .project-header-ul li {
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.1rem 0.5rem;
 }
 .lang {
     font-weight: bold;
@@ -252,14 +254,10 @@ hr {
         padding-right: 5vw;
         font-size: var(--font-size-sm);
     }
-    .navbar {
-        ul {
-            gap: 1.0rem;
-            li {
-                a {
-                    font-size: var(--font-size-md);
-                }
-            }
-        }
+    .navbar ul {
+        gap: 1.0rem;
+    }
+    .navbar ul li a {
+        font-size: var(--font-size-md);
     }
 }
