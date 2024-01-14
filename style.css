@@ -158,6 +158,10 @@ hr {
     width: calc(100% - (var(--icon-padding) * 2));
     height: calc(100% - (var(--icon-padding) * 2));
 }
+#technologies {
+    margin-top: calc(var(--spacer) / 2);
+    margin-bottom: calc(var(--spacer) / 2);
+}
 #education, #experience {
     margin-bottom: var(--spacer);
 }
