@@ -41,9 +41,12 @@
     --font-size-lg: 1.3rem;
     --font-size-xl: 1.6rem;
 
-    --spacer: 4em;
+    --spacer: 4rem;
+    --three-quarter-spacer: calc(var(--spacer) * 3 / 4);
+    --half-spacer: calc(var(--spacer) / 2);
+    --quarter-spacer: calc(var(--spacer) / 4);
 
-    --icon-padding: 0.5em;
+    --icon-padding: 0.5rem;
 }
 
 /* General */
@@ -56,8 +59,8 @@ body {
     max-width: 60vw;
     padding-left: 20vw;
     padding-right: 20vw;
-    margin-top: calc(var(--spacer) / 2);
-    margin-bottom: calc(var(--spacer));
+    margin-top: var(--half-spacer);
+    margin-bottom: var(--spacer);
     font-family: monospace;
     font-size: var(--font-size-md);
 }
@@ -83,7 +86,7 @@ code {
 }
 hr {
     color: var(--color-fg);
-    margin-bottom: calc(var(--spacer) / 2);
+    margin-bottom: var(--half-spacer);
 }
 .no-style {
     list-style: none;
@@ -123,12 +126,17 @@ hr {
     color: var(--color-fg) !important;
 }
 
+/* About page */
+#about-content h2 {
+    margin-top: var(--half-spacer);
+}
+
 /* Bio page */
 .bio-li {
     display: flex;
     align-items: center;
-    gap: calc(var(--spacer) / 2);
-    margin-bottom: calc(var(--spacer) / 2);
+    gap: var(--half-spacer);
+    margin-bottom: var(--half-spacer);
 }
 .bio-li-content {
     flex-basis: 90%;
@@ -159,10 +167,10 @@ hr {
     height: calc(100% - (var(--icon-padding) * 2));
 }
 #technologies {
-    margin-top: calc(var(--spacer) / 2);
-    margin-bottom: calc(var(--spacer) / 2);
+    margin-top: var(--half-spacer);
+    margin-bottom: var(--three-quarter-spacer);
 }
-#education, #experience {
+#experience, #education {
     margin-bottom: var(--spacer);
 }
 #education ul {
@@ -174,10 +182,12 @@ hr {
 
 /* Projects page */
 #projects-content h2 {
-    margin-top: calc(var(--spacer) / 4);
+    margin-top: var(--half-spacer);
+    margin-bottom: var(--half-spacer);
 }
 .projects-li {
-    margin-top: calc(var(--spacer) / 4);
+    margin-top: var(--quarter-spacer);
+    margin-bottom: var(--half-spacer);
 }
 .projects-project-title {
     vertical-align: bottom;
@@ -188,7 +198,7 @@ hr {
     align-items: flex-end;
     gap: 1rem;
     border-bottom: 1px solid var(--color-fg);
-    margin-bottom: calc(var(--spacer) / 4);
+    margin-bottom: var(--quarter-spacer);
     padding-bottom: 0.2em;
 }
 .project-header a {
