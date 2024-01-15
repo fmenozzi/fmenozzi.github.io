@@ -35,6 +35,9 @@
     --color-java: #b07219;
     --color-go: var(--nord-frost-1);
     --color-gdscript: var(--nord-frost-3);
+    --color-arduino: var(--nord-frost-0);
+    --color-kicad: var(--nord-aurora-4);
+    --color-freecad: var(--nord-frost-2);
 
     --font-size-sm: 0.8rem;
     --font-size-md: 1.0rem;
@@ -258,6 +261,15 @@ hr {
 }
 .lang-gdscript {
     background-color: var(--color-gdscript);
+}
+.lang-arduino {
+    background-color: var(--color-arduino);
+}
+.lang-kicad {
+    background-color: var(--color-kicad);
+}
+.lang-freecad {
+    background-color: var(--color-freecad);
 }
 
 /* Mobile-specific */
