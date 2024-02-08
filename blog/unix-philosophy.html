@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Power of the Unix Philosophy</title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../res/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../res/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-title">
+                federico menozzi
+            </div>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../bio.html">bio</a></li>
+                <li><a href="../projects.html">projects</a></li>
+                <li><a href="index.html" class="current-page-link">blog</a></li>
+            </ul>
+            <hr>
+        </div>
+
+        <div class="blog-post-content">
+            <div class="blog-post-title">
+                <h1>The Power of the Unix Philosophy</h1>
+            </div>
+            <div class="blog-post-date">
+                <i>Thu Feb 08 2024 | 15 min read</i>
+            </div>
+            <div class="blog-post-body">
+                The Unix philosophy describes a mindset for creating software tools that do one
+                thing well and work harmoniously with one another. It eschews monolithic designs
+                in favor of small, self-contained utilities that are easily composable, allowing
+                for great computational flexibility. It originated with Ken Thompson and his
+                colleagues at Bell Labs and is based on their experience writing the Unix
+                operating system. In their seminal work <a href="https://www.amazon.com/Unix-Programming-Environment-Prentice-Hall-Software/dp/013937681X">
+                <i>The UNIX Programming Environment</i></a>, Brian Kernighan and Rob Pike describe
+                it as follows:
+
+                <blockquote>
+                <i>
+                    "Although that philosophy can't be written down in a single sentence, at its heart
+                    is the idea that the power of a system comes more from the relationships among
+                    programs than from the programs themselves. Many Unix programs do trivial things
+                    in isolation, but, combined with other programs, become general and useful tools."
+                </i>
+                </blockquote>
+
+                <p>
+                Many of the ideas of the Unix philosophy stem from practical considerations of the
+                time: programs had to be small and self-contained due to extreme resource constraints
+                in hardware. Interfaces were often limited to <a href="https://en.wikipedia.org/wiki/Teleprinter">
+                physical teletype machines</a> that operated in simple text streams, and computers were
+                often shared resources that had to serve multiple users, further limiting resource availability.
+                In such an environment, extraneous features and bloated monoliths were often not practical.
+                </p>
+
+                <h2>Core Tenets</h2>
+
+                The Unix philosophy can be summarized by the following core tenets:
+                <ol>
+                    <li>Programs should do one thing and do it well</li>
+                    <li>Programs should be designed to work well together</li>
+                    <li>Programs should handle plain text streams</li>
+                    <li>Everything* is a file</li>
+                </ol>
+                *<i>in practice this is not quite always true</i>
+
+                <p>
+                Let's break these down individually.
+                </p>
+
+                <h3>1. Programs should do one thing and do it well</h3>
+
+                As mentioned at the start, the Unix philosophy rejects monolithic programs that
+                try to do everything, opting instead for a large number of small programs that
+                each do one specific task. Such programs are often called software tools, drawing
+                comparisons to physical tools that excel at performing a single task; after all,
+                hammers are excellent for driving nails but terrible for driving screws, and combining
+                a hammer and a screwdriver will result in a tool that is well-suited for neither task.
+                Software designed to perform a single task has the added benefit of being much
+                easier to debug and maintain, which increases longevity.
+
+                <h3>2. Programs should be designed to work well together</h3>
+
+                In order for the true power of the Unix philosophy to shine, it is not sufficient
+                that programs be simple and single-minded, as real-world computing tasks often
+                require more than what any individual such program can achieve. It is therefore
+                imperative that these programs compose harmoniously in order to achieve ad hoc
+                computation. In most Unix environments this is best exemplified by the use of
+                the <i>pipe</i> <code>|</code> that allows for the output of one program to be
+                seamlessly passed as the input to another, but more generally it means conforming
+                to common interfaces like plain text streams and files to ensure maximal interoperability.
+
+                <h3>3. Programs should handle plain text streams</h3>
+
+                The early Unix pioneers described text streams as the universal interface, and
+                elected to use plain text for nearly all data and file formats. This has a
+                number of benefits over binary or proprietary formats:
+
+                <ul>
+                    <li>
+                        Plain text is <i>simple</i>, which means it's easier to write programs
+                        to use it effectively
+                    </li>
+                    <li>
+                        Plain text is <i>human-readable</i>, which can make a big difference if
+                        you need to e.g. inspect the output of an intermediate command while
+                        debugging a long chain of piped programs
+                    </li>
+                    <li>
+                        Plain text is <i>portable</i>, which means that your programs are much
+                        more likely to work on other architectures or operating systems with
+                        fewer modifications
+                    </li>
+                </ul>
+
+                <h3>4. Everything is a file</h3>
+
+                When people say that everything is a file in Unix, what they really mean is that
+                everything has a file-like interface in Unix. This allows for vastly simplified
+                interfaces to programs, allowing them to remain small and focused: Unix programs
+                often only accept data through stdin or via files. These same programs can then
+                be used to read/write data from/to phyiscal devices, over networks, etc.
+
+                Examples of Unix file interfaces include:
+
+                <ul>
+                    <li>
+                        <strong>Devices</strong>: block devices (e.g. hard drives) and character
+                        devices (e.g. serial output from a microcontroller)
+                    </li>
+                    <li>
+                        <strong>Network sockets</strong>: TCP/UDP sockets allow inter-process
+                        communication (IPC) between two remote hosts
+                    </li>
+                    <li>
+                        <strong>Processes</strong>: the <code>/proc/</code> filesystem exposes
+                        files and directories for every running process in the system, allowing
+                        systems to be queried live using simple file-based tools
+                    </li>
+                    <li>
+                        <strong>Named pipes</strong>: similar to regular <code>|</code> pipes,
+                        named pipes allow for local IPC between processes, though named pipes
+                        can outlive the processes in question
+                    </li>
+                </ul>
+
+                Unix shells have excellent support for handling files and file-like interfaces.
+                For example, most shells allow for <i>redirection</i> of input and output using
+                <code>&lt;</code> and <code>&gt;</code>, respectively. This allows using file contents
+                as inputs/outputs, and because everything in Unix is a file, this can be quite
+                powerful. You can even wrap arbitrary command output in a file-like interface via
+                <i>process substitution</i>, like this Bash example:
+
+                <p><code>diff &lt;(ls dir1) &lt;(ls dir2)</code></p>
+
+                In this example, we use the <code>&lt;()</code> syntax to wrap the result of each
+                <code>ls</code> command as though it were a file, and pass these two "files" to
+                <code>diff</code> for comparison. The result is that we can compare two directories
+                to see if they contain the same files by name at their top level.
+
+                <h2>Motivating Examples</h2>
+
+                People who are not accustomed to the Unix philosophy will reject it unless they
+                can understand its power. This section will therefore offer some motivating
+                examples to demonstrate how the Unix philosophy can be used to solve practical
+                everyday problems. Each of the tasks will be completed using the following limited
+                set of basic <a href="https://www.gnu.org/software/coreutils/coreutils.html">GNU coreutils</a>
+                programs:
+
+                <p>
+                <ul>
+                    <li><code>find</code>: find files by name and type</li>
+                    <li><code>grep</code>: search file contents</li>
+                    <li><code>cd</code>: change directories</li>
+                    <li><code>head</code>: output first <i>n</i> lines of file</li>
+                    <li><code>diff</code>: compare files line by line</li>
+                    <li><code>du</code>: determine disk usage of file</li>
+                    <li><code>sort</code>: sort lines in file</li>
+                    <li><code>uniq</code>: report or omit duplicate lines in file</li>
+                    <li><code>xargs</code>: run commands for every item in stdin</li>
+                    <li><code>ps</code>: get information on currently-running processes</li>
+                    <li><code>md5sum</code>: hash file contents
+                        <ul>
+                            <li>
+                                Note that MD5 is <strong>not</strong> suited for cryptography and
+                                is easily defeated by modern commodity hardware. However, using it
+                                for hashing local files to compare them for equality is fine.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                </p>
+
+                <h3>Display the top ten memory-consuming processes</h3>
+
+                <p><code>ps aux | sort -b -r -k 4 | head</code></p>
+
+                Here we use <code>ps</code> to list all processes (<code>a</code>) including those running
+                in the background (<code>x</code>) and display additional information like CPU and memory
+                usage (<code>u</code>). We then sort this list lexicographically (<code>sort</code>) ignoring
+                leading blanks (<code>-b</code>) in reverse order (<code>-r</code>) by memory usage corresponding
+                to the fourth column in each line (<code>-k 4</code>). We finally send this sorted list to
+                <code>head</code> to get the first ten lines, the default number of lines used by <code>head</code>.
+
+                <h3>Find duplicate files (by contents) in current directory</h3>
+
+                <p><code>find . -type f | xargs -d "\n" md5sum | sort | uniq -w 32 -D</code></p>
+
+                First we get a list of all files in the current directory (<code>find . -type f</code>),
+                then we apply the MD5 hash to each newline-delimitted file in the list (<code>xargs -d "\n" md5sum</code>)
+                and sort the resulting list of hashes followed by filenames lexicographically (<code>sort</code>).
+                We then print the unique entires in this list (<code>uniq</code>) by comparing based on the
+                first 32 characters representing the MD5 hash (<code>-w 32</code>) and printing all the duplicate
+                lines (<code>-D</code>).
+
+                <h3>Find the five largest files in your home directory</h3>
+
+                <p><code>find ~ -type f | xargs -d "\n" du -h | sort -h -r -k 1 | head -n 5</code></p>
+
+                First we get a list of all files in the home directory (<code>find ~ -type f</code>), then
+                we get the disk usage of each newline-delimitted file in the list (<code>xargs -d "\n" du -h</code>).
+                We pass the <code>-h</code> flag to <code>du</code> in order to output the sizes in human-readable
+                form (3K, 40M, 3G, etc). We then sort this list lexicographically (<code>sort</code>) in reverse
+                order (<code>-r</code>) using the first part of the line corresponding to the disk usage
+                (<code>-k 1</code>) in human-readable form (<code>-h</code>) before printing the first five
+                lines (<code>head -n 5</code>).
+
+                <h3>Recursively compare two directory trees</h3>
+
+                <p><code>diff &lt;(cd dir1 &amp;&amp; find . | sort) &lt;(cd dir2 &amp;&amp; find . | sort)</code></p>
+
+                We saw an example earlier of using <code>diff</code> to compare two directories, but that example
+                only compares the top-level items in each directory. This one will compare each directory structure
+                recursively to determine whether they contain the same files and directories by name (not contents,
+                like our previous duplicate files example).
+
+                <p>
+                Like the earlier example, we make use of process substitution to create two "files" to send to
+                <code>diff</code> for comparison, where each "file" is a list of sorted (<code>sort</code>) paths
+                for each file and directory present in the target directory (<code>cd dir &amp;&amp; find .</code>).
+                Note that we <code>cd</code> into each target directory first in each process
+                substitution command: this will prevent the target directory names from appearing in the sorted list
+                of paths, which would cause every entry to be considered a diff if the two target directories have
+                different names.
+                </p>
+
+                <h3>Find all five-letter English words that end in "out"</h3>
+
+                <p><code>grep ^..out$ /usr/share/dict/words </code></p>
+
+                This might only be useful for cheating at <a href="https://www.nytimes.com/games/wordle/index.html">
+                Wordle</a>, but I decided to include it as an example of a task that a user can complete locally
+                that they may otherwise delegate to an online search engine. It uses
+                <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expressions</a> to search the
+                <code>/usr/share/dict/words</code> text file of English words (shipped in most Linux distributions)
+                to search for patterns matching the start of a line, any two letters, "out", and then finally the
+                end of a line.
+
+                <h2>Final Thoughts</h2>
+
+                At its heart, the Unix philosophy is about simplicity, interoperability, and separation of concerns;
+                about small, simple programs that do their job well and adhere to simple and common interfaces; about
+                unlocking the true potential of a system by using the myriad different combinations of utilities to
+                effect arbitrary computation. It's a way of thinking about software and system design that maximizes
+                flexibility and potential utility, and is as timeless as it is effective. While the original Unix itself
+                may have come and gone, its legacy still prevails to this day, allowing for yesterday's programs to work
+                seamlessly with today's in order to solve tomorrow's problems.
+
+                <h2>Further Reading</h2>
+
+                <ul>
+                    <li><i><a href="https://www.amazon.com/Unix-Programming-Environment-Prentice-Hall-Software/dp/013937681X">The UNIX Programming Environment</a></i></li>
+                    <li><i><a href="https://www.amazon.com/gp/product/1593272200">The Linux Programming Interface: A Linux and UNIX System Programming Handbook</a></i></li>
+                    <li><a href="https://clig.dev">commandline interface guidelines</a></li>
+                    <li><a href="https://www.commandlinefu.com">commandlinefu</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+<html>

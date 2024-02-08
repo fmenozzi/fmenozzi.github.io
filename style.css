@@ -48,6 +48,7 @@
     --three-quarter-spacer: calc(var(--spacer) * 3 / 4);
     --half-spacer: calc(var(--spacer) / 2);
     --quarter-spacer: calc(var(--spacer) / 4);
+    --eighth-spacer: calc(var(--spacer) / 8);
 
     --icon-padding: 0.5rem;
 }
@@ -86,6 +87,7 @@ code {
     background-color: var(--nord-polar-night-3);
     padding: 0.15rem;
     border-radius: 0.15rem;
+    white-space: pre;
 }
 hr {
     color: var(--color-fg);
@@ -95,6 +97,11 @@ hr {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+.todo {
+    /* Intentionally terrible so as to stand out better */
+    color: red;
+    background-color: yellow;
 }
 
 /* Top navbar */
@@ -270,6 +277,31 @@ hr {
 }
 .lang-freecad {
     background-color: var(--color-freecad);
+}
+
+/* Blog page (index) */
+#blog-index-rss-link {
+    margin-bottom: var(--half-spacer);
+}
+.blog-index-li {
+    margin-bottom: var(--half-spacer);
+}
+.blog-index-post-title h2 {
+    margin-bottom: var(--eighth-spacer);
+}
+.blog-index-post-title a {
+    text-underline-offset: 0.35rem;
+}
+.blog-index-post-date i {
+    margin-bottom: var(--eight-spacer);
+}
+
+/* Blog posts */
+.blog-post-title {
+    margin-bottom: var(--quarter-spacer);
+}
+.blog-post-date {
+    margin-bottom: var(--quarter-spacer);
 }
 
 /* Mobile-specific */
