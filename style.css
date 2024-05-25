@@ -142,14 +142,11 @@ hr {
 }
 
 /* Bio page */
-.bio-li {
+.bio-li-header {
     display: flex;
     align-items: center;
     gap: var(--half-spacer);
-    margin-bottom: var(--half-spacer);
-}
-.bio-li-content {
-    flex-basis: 90%;
+    margin-bottom: var(--quarter-spacer);
 }
 .bio-li-icon {
     flex-basis: 10%;
@@ -158,8 +155,8 @@ hr {
     position: relative;
     height: 10%;
     width: 10%;
-    min-width: 3em;
-    max-width: 5em;
+    min-width: 2em;
+    max-width: 2.5em;
     aspect-ratio: 1;
     border-radius: 1em;
     background-color: var(--nord-snow-storm-2);
@@ -175,6 +172,13 @@ hr {
     object-position: center;
     width: calc(100% - (var(--icon-padding) * 2));
     height: calc(100% - (var(--icon-padding) * 2));
+}
+.bio-li-title {
+    font-size: var(--font-size-lg);
+    flex-basis: 90%;
+}
+.bio-li-content {
+    margin-bottom: var(--half-spacer);
 }
 #technologies {
     margin-top: var(--half-spacer);
@@ -316,6 +320,9 @@ hr {
         gap: 1.0rem;
     }
     .navbar ul li a {
+        font-size: var(--font-size-md);
+    }
+    .bio-li-title {
         font-size: var(--font-size-md);
     }
 }
