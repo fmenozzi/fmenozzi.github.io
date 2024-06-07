@@ -65,7 +65,7 @@ body {
     margin-right: auto;
     margin-top: var(--half-spacer);
     margin-bottom: var(--spacer);
-    font-family: sans-serif;
+    font-family: system-ui, sans-serif;
     font-size: var(--font-size-md);
 }
 h1,h2,h3,h4 {
@@ -241,7 +241,7 @@ hr {
     padding: 0.1rem 0.5rem;
 }
 .lang {
-    font-family: monospace;
+    font-family: system-ui, monospace;
     font-weight: bold;
     font-size: var(--font-size-sm);
     color: white;
