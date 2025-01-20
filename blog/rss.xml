@@ -13,5 +13,12 @@
             <pubDate>Thu, 08 Feb 2024 12:00:00 GMT</pubDate>
             <description>Why the Unix philosophy still prevails all these years later</description>
         </item>
+        <item>
+            <title>Right to Repair</title>
+            <link>https://fmenozzi.com/blog/right-to-repair.html</link>
+            <guid>https://fmenozzi.com/blog/right-to-repair.html</guid>
+            <pubDate>Mon, 20 Jan 2025 12:00:00 GMT</pubDate>
+            <description>On the importance of fixing your own stuff</description>
+        </item>
     </channel>
 </rss>

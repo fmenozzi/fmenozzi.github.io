@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>Right to Repair</title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../res/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="../res/favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-title">
+                federico menozzi
+            </div>
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../about.html">about</a></li>
+                <li><a href="../bio.html">bio</a></li>
+                <li><a href="../projects.html">projects</a></li>
+                <li><a href="index.html" class="current-page-link">blog</a></li>
+            </ul>
+            <hr>
+        </div>
+
+        <div class="blog-post-content">
+            <div class="blog-post-title">
+                <h1>Right to Repair</h1>
+            </div>
+            <div class="blog-post-date">
+                <i>Mon Jan 20 2025 | 15 min read</i>
+            </div>
+            <div class="blog-post-body">
+                <h2>Background</h2>
+                <p>
+                A while back, I was in San Francisco with my then-girlfriend for
+                her Ph.D exit talk. I brought with me my trusty Thinkpad T430 that
+                I've had since starting college in 2012. During my time as an
+                undergraduate I had replaced the stock HDD with a much faster SSD,
+                upgraded the RAM from the stock 4GB to 8GB, and switched to running
+                Linux full-time. This laptop has served me well ever since, serving
+                as my main machine for two computer science degrees, as well as
+                my personal laptop afterwards (albeit somewhat underutilized due
+                to having a work laptop for most of that time).
+                </p>
+
+                <p>
+                In the months leading up to this trip, I had noticed an issue with
+                my laptop's left lid hinge that prevented the laptop from fully
+                closing without partially separating the lid's plastic frame from
+                the front bezel. I realized later that the support that connects
+                the hinge to the lid's frame had broken, detaching from the hinge
+                itself. This didn't affect the actual display so I mostly just
+                dealt with it, resorting to banging the pieces back together with
+                my fist after closing the lid in order to get everything flush
+                again. This is a ThinkPad, after all; it can take a beating or
+                two.
+                </p>
+
+                <p>
+                Because my girlfriend was busy preparing for her exit talk during
+                the day, I found myself with lots of time to walk around the city.
+                On one such walk I came upon a local computer repair store and
+                decided to ask how much it would cost to repair my laptop. Imagine
+                my surprise when I was told that it would cost over $200 plus the
+                cost of replacement parts. The owner then turned his screen around
+                to show me the parts in question, revealing that it was a $30 Amazon
+                listing. That was the moment when I realized "I could definitely
+                just do this myself". So I set out to do just that.
+                </p>
+
+                <h2>The Repair</h2>
+                <p>
+                After ordering the replacement lid and hinges off of Amazon, I
+                checked YouTube for tutorials and
+                <a href="https://www.youtube.com/watch?v=4LbtouDvjZI">found one</a>
+                that perfectly applied to my situation, as the showcased damage
+                to the laptop was identical to my own situation. Performing the
+                repair involved:
+                </p>
+
+                <ul>
+                    <li>Removing the front bezel</li>
+                    <li>Removing the keyboard, cover, and trackpad assembly</li>
+                    <li>Removing the wires around the edge of the screen, as
+                        well as the webcam assembly</li>
+                </ul>
+
+                after which the hinge itself could be replaced, and the steps
+                above undone in reverse order.
+
+                <p>
+                None of the process required any tools other than a screwdriver,
+                and all the various pieces and panels clipped back into place
+                without the need to glue anything in. I consider myself quite
+                fortunate in this regard; many modern laptops suffer from an
+                overuse of glue, components soldered directly onto the main
+                board, and other obstacles that make disassembly and repair
+                difficult or even outright impossible.
+                </p>
+
+                <h2>Up Next: Battery</h2>
+
+                <p>
+                By all accounts, the ThinkPad repair was a resounding success.
+                I had successfully replaced the hinge for much less money than
+                if I had taken it to a shop, and had learned a thing or two
+                along the way as an added bonus. The rush when I clipped the last
+                piece into place and realized I could finally open and close the
+                lid properly was intoxicating, similar to the dopamine hit of
+                buying a nice new product, except even better because it was an
+                old product that I had made to feel new again by my own hand.
+                </p>
+
+                <p>
+                So I immediately set my sights on another repair that I had been
+                dying to perform for some time now: replacing the aging battery.
+                I was still rocking the original OEM 6-cell battery that came
+                with the laptop back when I got it in 2012. In the decade of use
+                since then, it had degraded significantly, and combined with my
+                use of Linux (not exactly known for for its power efficiency), I
+                struggled to get more than about 45 minutes of light use out of
+                it, forcing me to keep it plugged in at all times.
+                </p>
+
+                <p>
+                While I had hoped that replacing the battery would be as simple
+                as popping the back cover and swapping in a new one, there were
+                a couple of thorny details I uncovered during my research:
+                </p>
+
+                <ul>
+                    <li>
+                        Lenovo utilizes a battery whitelist in their battery
+                        management system, so the use of non-OEM batteries would
+                        require either flashing the embedded controller firmware
+                        with an alternative that would skip battery authentication
+                        checks, or buying third-party batteries that successfully
+                        trick such checks into accepting them
+                    </li>
+                    <li>
+                        Lenovo no longer produces official batteries for this
+                        product line
+                    </li>
+                </ul>
+
+                <p>
+                This means that I would be forced to buy an aftermarket battery
+                of questionable quality, and I would have to find one that had
+                successfully reverse-engineered the OEM battery enough to be
+                recognized as legitimate by the embedded firmware controller.
+                After some deliberation I finally decided that this was too much
+                uncertainty and that I would be better off finally replacing my
+                laptop.
+                </p>
+
+                <h2>Dawn of the Framework Era</h2>
+
+                <p>
+                I did not make the decision to buy a new laptop lightly. Consumer
+                electronics contribute an enormous amount of
+                <a href="https://en.wikipedia.org/wiki/Electronic_waste">e-waste</a>
+                to landfills, polluting our environment with toxic metals and
+                wasting precious nonrenewable resources. Rampant consumerism
+                only accelerates this process, and one of the best ways we can
+                slow the growth of e-waste is by using our electronics for as
+                long as possible. I had tried to make my old ThinkPad last as
+                long as possible, and as a result of my ability to open it up and
+                replace some parts, I was able to stretch its lifetime to over
+                a decade. Nevertheless, I decided it was finally time to invest
+                in a new machine.
+                </p>
+
+                <p>
+                My experience with repairing my ThinkPad greatly influenced my
+                priorities in selecting a new machine. Namely, I should have
+                full control over both the hardware and the software, allowing
+                me to use my machine as a tool as I see fit, rather than being
+                subject to artificial limitations in repairability and extensibility.
+                </p>
+
+                <p>
+                I quickly settled on the
+                <a href="https://frame.work/products/laptop-diy-13-gen-amd/">Framework 13 AMD Ryzen 7040</a>,
+                as it checked all the right boxes for me:
+                </p>
+
+                <ul>
+                    <li>Fully repairable, with virtually all hardware being replaceable</li>
+                    <li>Excellent Linux support</li>
+                    <li>Open-source embedded controller firmware</li>
+                </ul>
+
+                <p>
+                I also opted for the DIY edition that requires assembling the
+                laptop, not just because it was cheaper but because it would
+                give me a feel for just how repairable this laptop actually was.
+                When it finally arrived and I
+                <a href="https://guides.frame.work/Guide/Framework+Laptop+13+(AMD+Ryzen%E2%84%A2+7040+Series)+DIY+Edition+Quick+Start+Guide/211">started assembling it</a>,
+                I was blown away by just how easy it was to get parts into and
+                out of this machine. Framework made several conscious decisions
+                to make repair much easier than is typical, including but not
+                limited to:
+                </p>
+
+                <ul>
+                    <li>Using captive screws throughout</li>
+                    <li>Making liberal use of magnets to clamp and align panels</li>
+                    <li>Adding a finger wrap on the touchpad cable to ease installation</li>
+                    <li>Adding high-quality labels (with QR codes) to every major component and slot</li>
+                    <li>Including a combined screwdriver/spudger tool in the box</li>
+                </ul>
+
+                <p>
+                I could access and replace any internal component in a matter of
+                minutes. For repairs that would require more advanced soldering
+                work, Framework makes full schematics and assembly drawings
+                <a href="https://knowledgebase.frame.work/availability-of-schematics-and-boardviews-BJMZ6EAu">available to repair shops</a>.
+                In addition, much of the Framework software stack is
+                <a href="https://github.com/FrameworkComputer">open-source</a>,
+                including their embedded controller firmware, which should help
+                prevent any software lock issues around replacing the battery in
+                the future.
+                </p>
+
+                <h2>The Importance of Fixing Your Own Stuff</h2>
+
+                <p>
+                My experience throughout this process, while enlightening and
+                empowering, is far from typical in the consumer electronics
+                space. Corporations have discovered that they can extract more
+                profit from their customers through a variety of increasingly
+                shady means, including but not limited to:
+                </p>
+
+                <ul>
+                    <li>
+                        Designing products to be more difficult to upgrade, such
+                        as by soldering upgradable components like RAM and
+                        storage directly to a computer's mainboard, or by using
+                        industrial adhesives to glue components like batteries
+                        into place
+                    </li>
+                    <li>
+                        Designing products with an artificially-low expected
+                        operating lifespan, often coinciding with the end of
+                        the manufacturer's warranty support (i.e.
+                        <a href="https://en.wikipedia.org/wiki/Planned_obsolescence">planned obsolescence</a>)
+                    </li>
+                    <li>
+                        Restricting access to first-party parts, tools, and
+                        documentation
+                    </li>
+                    <li>
+                        Using software locks and device pairing to prevent the
+                        use of third-party parts that would otherwise work just
+                        fine
+                    </li>
+                    <li>
+                        Requiring the use of the cloud for some devices to operate,
+                        and then shutting down the servers after a few years,
+                        leaving you with little more than a paper weight
+                    </li>
+                </ul>
+
+                <p>
+                There are countless examples of such practices happening in the
+                real world:
+                </p>
+
+                <ul>
+                    <li>
+                        Apple has historically been notorious for manufacturing
+                        laptops that make heavy use of soldered-on components
+                        and adhesives, preventing common upgrades such as adding
+                        more memory or storage, and instead forcing you to bring
+                        your laptop to an Apple store (or even to buy a new one
+                        entirely)
+                    </li>
+                    <li>
+                        HP printers would display fake error messages when users
+                        attempted to use third-party ink cartridges
+                    </li>
+                    <li>
+                        John Deere tractors enter a slow "limp" mode when some
+                        errors show up, forcing users to hire a John Deere
+                        technician to clear them out using special software
+                    </li>
+                </ul>
+
+                <p>
+                However, there is hope on the horizon. For example, Apple now
+                has a <a href="https://www.apple.com/newsroom/2021/11/apple-announces-self-service-repair/">self-service repair program</a>
+                that allows customers access to specialized tools for repairing
+                their phones and laptops (though they still have yet to do away
+                with parts pairing). The FTC has recently <a href="https://www.ftc.gov/news-events/news/press-releases/2025/01/ftc-states-sue-deere-company-protect-farmers-unfair-corporate-tactics-high-repair-costs">sued John Deere</a>
+                for monopolistic practices that drive up the time and cost of
+                tractor repair. And companies like Framework have shown that it
+                is possible to design and sell products with repairability in
+                mind.
+                </p>
+
+                <p>
+                Ultimately, consumers will need to shift their perspective when
+                it comes to their relationships with their products and their
+                consumerist habits in general. We need to ensure that we utilize
+                our products to their fullest extent, and become more comfortable
+                with the idea of repairing what we already own, rather than
+                defaulting to simply buying a new one. This in turn requires that
+                the products themselves are designed to last and work for the
+                user, and that we be in control of our technology and not the
+                other way around. In our current capitalist system, that means
+                voting with our wallets for products that we can truly own and
+                that won't let us down with artificial limitations. Additionally,
+                we should support legislation for enshrining the right to repair
+                into law.
+                </p>
+
+                <p>
+                Several months in, my new Framework has been an absolute pleasure
+                to use. It has excellent Linux support and I get several hours
+                of battery life on a single charge. My hope is to use this for
+                at <strong>least</strong> another decade, upgrading parts as
+                needed along the way, turning it into my own little
+                <a href="https://en.wikipedia.org/wiki/Ship_of_Theseus">Ship of Theseus</a>.
+                While Theseus used his ship to escape from King Minos, I hope
+                to use mine to escape from the clutches of corporate control
+                over our devices.
+                </p>
+
+                <h2>Further Reading</h2>
+
+                <ul>
+                    <li><a href="https://www.repair.org/">Right to repair</a></li>
+                    <li><a href="https://frame.work">Framework</a></li>
+                    <li><a href="https://www.ifixit.com/">iFixit</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+<html>
