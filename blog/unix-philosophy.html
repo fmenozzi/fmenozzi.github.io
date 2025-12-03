@@ -157,7 +157,11 @@
                 powerful. You can even wrap arbitrary command output in a file-like interface via
                 <i>process substitution</i>, like this Bash example:
 
-                <p><code>diff &lt;(ls dir1) &lt;(ls dir2)</code></p>
+<div class="code-block">
+<pre>
+<code>diff &lt;(ls dir1) &lt;(ls dir2)</code>
+</pre>
+</div>
 
                 In this example, we use the <code>&lt;()</code> syntax to wrap the result of each
                 <code>ls</code> command as though it were a file, and pass these two "files" to
@@ -199,7 +203,11 @@
 
                 <h3>Display the top ten memory-consuming processes</h3>
 
-                <p><code>ps aux | sort -b -r -k 4 | head</code></p>
+<div class="code-block">
+<pre>
+<code>ps aux | sort -b -r -k 4 | head</code>
+</pre>
+</div>
 
                 Here we use <code>ps</code> to list all processes (<code>a</code>) including those running
                 in the background (<code>x</code>) and display additional information like CPU and memory
@@ -210,7 +218,11 @@
 
                 <h3>Find duplicate files (by contents) in current directory</h3>
 
-                <p><code>find . -type f | xargs -d "\n" md5sum | sort | uniq -w 32 -D</code></p>
+<div class="code-block">
+<pre>
+<code>find . -type f | xargs -d "\n" md5sum | sort | uniq -w 32 -D</code>
+</pre>
+</div>
 
                 First we get a list of all files in the current directory (<code>find . -type f</code>),
                 then we apply the MD5 hash to each newline-delimitted file in the list (<code>xargs -d "\n" md5sum</code>)
@@ -221,7 +233,11 @@
 
                 <h3>Find the five largest files in your home directory</h3>
 
-                <p><code>find ~ -type f | xargs -d "\n" du -h | sort -h -r -k 1 | head -n 5</code></p>
+<div class="code-block">
+<pre>
+<code>find ~ -type f | xargs -d "\n" du -h | sort -h -r -k 1 | head -n 5</code>
+</pre>
+</div>
 
                 First we get a list of all files in the home directory (<code>find ~ -type f</code>), then
                 we get the disk usage of each newline-delimitted file in the list (<code>xargs -d "\n" du -h</code>).
@@ -233,7 +249,11 @@
 
                 <h3>Recursively compare two directory trees</h3>
 
-                <p><code>diff &lt;(cd dir1 &amp;&amp; find . | sort) &lt;(cd dir2 &amp;&amp; find . | sort)</code></p>
+<div class="code-block">
+<pre>
+<code>diff &lt;(cd dir1 &amp;&amp; find . | sort) &lt;(cd dir2 &amp;&amp; find . | sort)</code>
+</pre>
+</div>
 
                 We saw an example earlier of using <code>diff</code> to compare two directories, but that example
                 only compares the top-level items in each directory. This one will compare each directory structure
@@ -252,7 +272,11 @@
 
                 <h3>Find all five-letter English words that end in "out"</h3>
 
-                <p><code>grep ^..out$ /usr/share/dict/words </code></p>
+<div class="code-block">
+<pre>
+<code>grep ^..out$ /usr/share/dict/words</code>
+</pre>
+</div>
 
                 This might only be useful for cheating at <a href="https://www.nytimes.com/games/wordle/index.html">
                 Wordle</a>, but I decided to include it as an example of a task that a user can complete locally

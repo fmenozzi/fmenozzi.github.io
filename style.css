@@ -84,11 +84,32 @@ a:hover, a:focus {
     color: var(--color-link-hover);
 }
 code {
-    background-color: var(--nord-polar-night-3);
+    background-color: var(--nord-polar-night-1);
     padding: 0.15rem;
     border-radius: 0.15rem;
-    white-space: pre;
 }
+
+.code-block {
+    position: relative;
+    margin: 1rem 0;
+    line-height: 1.45;
+}
+
+.code-block pre {
+    position: relative
+    margin: 0;
+    overflow: auto;
+    background-color: var(--nord-polar-night-1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.code-block .keyword  { color: var(--nord-aurora-0); font-weight: bold; } /* Red */
+.code-block .string   { color: var(--nord-aurora-3); }                    /* Green */
+.code-block .literal  { color: var(--nord-frost-1); }                     /* Sky blue */
+.code-block .function { color: var(--nord-aurora-2); }                    /* Yellow */
+.code-block .comment  { color: var(--nord-frost-2); font-style: italic; } /* Periwinkle */
+
 hr {
     color: var(--color-fg);
     margin-bottom: var(--half-spacer);
