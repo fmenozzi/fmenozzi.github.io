@@ -21,11 +21,13 @@
     --nord-aurora-3: #a3be8c; /* Green */
     --nord-aurora-4: #b48ead; /* Lavender */
 
-    --color-bg: var(--nord-polar-night-0);
-    --color-fg: var(--nord-snow-storm-2);
-    --color-link: var(--nord-frost-1);
+    --color-bg: var(--nord-snow-storm-2);
+    --color-fg: var(--nord-polar-night-1);
+    --color-link: var(--nord-frost-3);
     --color-link-visited: var(--nord-aurora-4);
-    --color-link-hover: var(--nord-frost-3);
+    --color-link-hover: var(--nord-aurora-0);
+
+    --color-code-bg: var(--nord-frost-3);
 
     --color-rust: var(--nord-aurora-1);
     --color-c: var(--nord-polar-night-3);
@@ -84,7 +86,8 @@ a:hover, a:focus {
     color: var(--color-link-hover);
 }
 code {
-    background-color: var(--nord-polar-night-1);
+    color: white;
+    background-color: var(--color-code-bg);
     padding: 0.15rem;
     border-radius: 0.15rem;
 }
@@ -96,10 +99,11 @@ code {
 }
 
 .code-block pre {
-    position: relative
+    position: relative;
     margin: 0;
     overflow: auto;
-    background-color: var(--nord-polar-night-1);
+    color: white;
+    background-color: var(--color-code-bg);
     padding: 1rem;
     border-radius: 0.5rem;
 }
@@ -180,7 +184,6 @@ hr {
     max-width: 2.5em;
     aspect-ratio: 1;
     border-radius: 1em;
-    background-color: var(--nord-snow-storm-2);
 }
 .bio-li-icon img {
     position: absolute;
